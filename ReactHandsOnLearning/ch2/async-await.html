@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      const getFakePerson = async () => {
+        try {
+          const res = await fetch("https://api.randomuser.me/?nat=US&results=10");
+          const { results } = await res.json();
+          console.log(results);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      getFakePerson();
+    </script>
+  </body>
+</html>
