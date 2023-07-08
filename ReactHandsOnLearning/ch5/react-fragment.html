@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React Recipes</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>The cat's name is {name}</h1>
+    </div>
+    <script type="text/babel">
+      // Reactでは複数要素をコンポーネントの戻り値として返すことができないが、React.Fragmentを使用することでラッパーを記述できるため
+      // 複数要素を返すように見える形で記述できる
+      function Cat({ name }) {
+        return (
+          <React.Fragment>
+            <h1>The cat's name is {name}</h1>
+            <p>He's good.</p>
+          </React.Fragment>
+        );
+      }
+
+      ReactDOM.render(<Cat name="Jungle" />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
